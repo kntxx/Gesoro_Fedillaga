@@ -31,4 +31,11 @@
 
     color: transparent;
   }
+
+  .textBlack {
+    color: #111;
+  }
+  .textGray {
+    color: #e4e4e4;
+  }
 }
