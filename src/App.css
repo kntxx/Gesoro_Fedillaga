@@ -1,42 +1,34 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+@import "tailwindcss";
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@layer base {
+  body {
+    font-family: "Unbounded";
+    font-weight: 300;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@layer utilities {
+  .regFont {
+    font-family: "Unbounded";
+    font-weight: 400;
   }
-}
+  .lightFont {
+    font-family: "Unbounded";
+    font-weight: 300;
+  }
+  .textGradient {
+    background-image: linear-gradient(
+      to right,
+      #c6f1f7 0%,
+      #f983e9 36%,
+      #b877ff 74%,
+      #c2e9cd 100%
+    );
 
-.card {
-  padding: 2em;
-}
+    -webkit-background-clip: text;
+    background-clip: text;
 
-.read-the-docs {
-  color: #888;
+    color: transparent;
+  }
 }
