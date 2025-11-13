@@ -1,7 +1,10 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/authContext";
+const VerificationEmailMessage = () => {
+  const { currentUser } = useAuth();
 
-const verificationEmailMessage = () => {
-  return <div>verificationEmailMessage</div>;
+  return <section>VerificationEmailMessage</section>;
 };
 
-export default verificationEmailMessage;
+export default VerificationEmailMessage;
