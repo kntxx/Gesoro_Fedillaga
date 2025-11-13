@@ -1,7 +1,12 @@
 import "./App.css";
+import Login from "./components/auth/login/Login";
 
 function App() {
-  return <div className="textGradient text-[150px] ">GESORO-FEDILLAGA</div>;
+  return (
+    <div>
+      <Login />
+    </div>
+  );
 }
 
 export default App;
