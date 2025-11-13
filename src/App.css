@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
 @import "tailwindcss";
 
+/* ====================
+   BASE STYLES
+======================= */
 @layer base {
   body {
     font-family: "Unbounded";
@@ -8,15 +11,13 @@
   }
 }
 
+/* ====================
+   UTILITIES
+======================= */
 @layer utilities {
-  .regFont {
-    font-family: "Unbounded";
-    font-weight: 400;
-  }
-  .lightFont {
-    font-family: "Unbounded";
-    font-weight: 300;
-  }
+  .regFont { font-family: "Unbounded"; font-weight: 400; }
+  .lightFont { font-family: "Unbounded"; font-weight: 300; }
+
   .textGradient {
     background-image: linear-gradient(
       to right,
@@ -25,128 +26,131 @@
       #b877ff 74%,
       #c2e9cd 100%
     );
-
     -webkit-background-clip: text;
     background-clip: text;
-
     color: transparent;
   }
 
-  .textBlack {
-    color: #111111;
-  }
-  .textGray {
-    color: #e4e4e4;
-  }
+  .textBlack { color: #111111; }
+  .textGray { color: #e4e4e4; }
+
   .bg-Image {
     background-image: url("./assets/bgImage.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
+
   .bg-Image2 {
     background-image: url("./assets/bgIamge2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
+
   .bigBgImage {
     background-image: url("./assets/bigBgImage.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
-  @layer utilities {
-    .textGradient {
-      background-image: linear-gradient(
-        to right,
-        #c6f1f7 0%,
-        #f983e9 36%,
-        #b877ff 74%,
-        #c2e9cd 100%
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
 
-    .btnGradient {
-      background-image: linear-gradient(
-        to right,
-        #c6f1f7 0%,
-        #f983e9 36%,
-        #b877ff 74%,
-        #c2e9cd 100%
-      );
-      color: white;
-      font-weight: 600;
-      padding: 0.75rem 1.5rem;
-      border-radius: 9999px;
-      transition: all 0.3s ease;
-    }
+  /* ====================
+        BUTTON GRADIENT
+  ======================= */
+  .btnGradient {
+    background-image: linear-gradient(
+      to right,
+      #c6f1f7 0%,
+      #f983e9 36%,
+      #b877ff 74%,
+      #c2e9cd 100%
+    );
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+  }
 
-    .btn-gradient:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
+  .btnGradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
 
-      /* ============================
-     PREMIUM ANIMATIONS
-  ============================== */
+  /* ====================
+        PREMIUM ANIMATIONS
+  ======================= */
 
   /* Fade Up */
   @keyframes fadeUp {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
-  .animate-fadeUp {
-    animation: fadeUp 0.9s ease-out forwards;
-  }
+  .animate-fadeUp { animation: fadeUp 0.9s ease-out forwards; }
 
   /* Fade In */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  .animate-fadeIn {
-    animation: fadeIn 1.2s ease-out forwards;
-  }
+  @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+  .animate-fadeIn { animation: fadeIn 1.2s ease-out forwards; }
 
   /* Slide from Left */
   @keyframes slideLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
   }
-  .animate-slideLeft {
-    animation: slideLeft 1s ease-out forwards;
-  }
+  .animate-slideLeft { animation: slideLeft 1s ease-out forwards; }
 
   /* Premium Button Animations */
-  .anim-btn {
-    transition: all 0.25s ease;
-  }
-  .anim-btn:hover {
-    transform: scale(1.03);
-  }
-  .anim-btn:active {
-    transform: scale(0.97);
+  .anim-btn { transition: all 0.25s ease; }
+  .anim-btn:hover { transform: scale(1.03); }
+  .anim-btn:active { transform: scale(0.97); }
+
+  /* ===========================
+     SUPER PREMIUM DODGE SYSTEM
+  ============================ */
+
+  .dodge {
+    transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
+  /* TELEPORT */
+  .teleport:hover {
+    opacity: 0;
+    transform: translate(350px, -250px) scale(0.6);
   }
+
+  /* SHAKE */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+  }
+  .shake { animation: shake 0.3s ease-in-out; }
+
+  /* GLOW */
+  @keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(255,255,255,0.4); }
+    50% { box-shadow: 0 0 25px rgba(255,255,255,0.7); }
+    100% { box-shadow: 0 0 10px rgba(255,255,255,0.4); }
+  }
+  .glow { animation: glow 1.2s infinite ease-in-out; }
+
+  /* VANISH */
+  .vanish:hover {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Direction Dodge */
+  .dodge-left:hover { transform: translateX(-200px); }
+  .dodge-right:hover { transform: translateX(200px); }
+  .dodge-up:hover { transform: translateY(-120px); }
+  .dodge-down:hover { transform: translateY(120px); }
+  .dodge-up-left:hover { transform: translate(-180px, -100px); }
+  .dodge-up-right:hover { transform: translate(180px, -100px); }
+  .dodge-down-left:hover { transform: translate(-180px, 100px); }
+  .dodge-down-right:hover { transform: translate(180px, 100px); }
+
 }
