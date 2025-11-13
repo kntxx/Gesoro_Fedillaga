@@ -70,12 +70,12 @@ const Login = () => {
         <div className="container mx-auto">
           <div className="flex items-center justify-center md:justify-between w-full">
 
-            {/* LEFT SIDE IMAGE */}
-            <div className="bg-Image w-[50%] md:h-screen hidden md:block"></div>
+            {/* LEFT SIDE IMAGE — SLIDE IN */}
+            <div className="bg-Image w-[50%] md:h-screen hidden md:block animate-slideLeft"></div>
 
-            {/* RIGHT SIDE */}
-            <div className="w-[80%] md:w-[50%] flex items-center justify-center">
-              <div className="w-[450px] flex flex-col gap-12">
+            {/* RIGHT SIDE — FORM WRAPPER (FADE UP) */}
+            <div className="w-[80%] md:w-[50%] flex items-center justify-center animate-fadeUp">
+              <div className="w-[450px] flex flex-col gap-12 animate-fadeIn">
 
                 {/* HEADER */}
                 <div>
@@ -92,8 +92,9 @@ const Login = () => {
                     {/* EMAIL */}
                     <input
                       className="py-2 text-[16px] font-bold w-full bg-transparent border-0 
-                      border-b-2 border-white/50 text-white placeholder:text-white outline-none 
-                      placeholder:font-light focus:border-b-white transition-colors"
+                      border-b-2 border-white/50 text-white placeholder:text-white 
+                      outline-none placeholder:font-light focus:border-b-white 
+                      transition-colors"
                       placeholder="Email"
                       type="email"
                       autoComplete="email"
@@ -105,8 +106,9 @@ const Login = () => {
                     {/* PASSWORD */}
                     <input
                       className="py-2 text-[16px] font-bold w-full bg-transparent border-0 
-                      border-b-2 border-white/50 text-white placeholder:text-white outline-none 
-                      placeholder:font-light focus:border-b-white transition-colors"
+                      border-b-2 border-white/50 text-white placeholder:text-white 
+                      outline-none placeholder:font-light focus:border-b-white 
+                      transition-colors"
                       placeholder="Password"
                       type="password"
                       autoComplete="current-password"
@@ -115,17 +117,17 @@ const Login = () => {
                       onChange={(e) => setPassword(e.target.value)}
                     />
 
-                    {/* ERROR MESSAGE */}
+                    {/* ERROR */}
                     {errorMessage && (
-                      <span className="text-red-600 font-bold text-sm">
+                      <span className="text-red-600 font-bold text-sm animate-fadeIn">
                         {errorMessage}
                       </span>
                     )}
 
-                    {/* SIGN IN BUTTON */}
+                    {/* SIGN IN BUTTON — ANIMATED */}
                     <button
                       disabled={isSigningIn}
-                      className={`w-full p-3 rounded-full cursor-pointer text-[16px] ${
+                      className={`w-full p-3 rounded-full cursor-pointer text-[16px] anim-btn transition-all duration-300 ${
                         isSigningIn
                           ? "bg-gray-300 cursor-not-allowed"
                           : "btnGradient"
@@ -150,21 +152,17 @@ const Login = () => {
                       <div className="flex-1 h-px bg-white/30"></div>
                     </div>
 
-                    {/* GOOGLE SIGN IN */}
+                    {/* GOOGLE SIGN IN — ANIMATED */}
                     <button
-                      className={`w-full p-3 rounded-full outline flex items-center justify-center gap-2 text-[16px] ${
+                      disabled={isSigningIn}
+                      className={`w-full p-3 rounded-full outline flex items-center justify-center gap-2 text-[16px] anim-btn transition-all ${
                         isSigningIn
                           ? "cursor-not-allowed"
-                          : "hover:bg-gray-100 transition duration-300 active:bg-gray-100"
+                          : "hover:bg-gray-100 active:scale-[0.97]"
                       }`}
-                      disabled={isSigningIn}
                       onClick={kentGesoro}
                     >
-                      <img
-                        src={googleIcon}
-                        alt="Google icon"
-                        className="w-6 h-6 mr-3"
-                      />
+                      <img src={googleIcon} alt="Google icon" className="w-6 h-6 mr-3" />
                       {isSigningIn ? "Signing In..." : "Continue with Google"}
                     </button>
 

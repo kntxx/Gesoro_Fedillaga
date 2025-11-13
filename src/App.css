@@ -89,5 +89,64 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
+
+      /* ============================
+     PREMIUM ANIMATIONS
+  ============================== */
+
+  /* Fade Up */
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fadeUp {
+    animation: fadeUp 0.9s ease-out forwards;
+  }
+
+  /* Fade In */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+
+  /* Slide from Left */
+  @keyframes slideLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .animate-slideLeft {
+    animation: slideLeft 1s ease-out forwards;
+  }
+
+  /* Premium Button Animations */
+  .anim-btn {
+    transition: all 0.25s ease;
+  }
+  .anim-btn:hover {
+    transform: scale(1.03);
+  }
+  .anim-btn:active {
+    transform: scale(0.97);
+  }
+
   }
 }
