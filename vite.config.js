@@ -8,5 +8,11 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/tests/setup.js",
+    environmentOptions: {
+      jsdom: {
+        resources: "usable",
+      },
+    },
+    pool: "forks",
   },
 });
