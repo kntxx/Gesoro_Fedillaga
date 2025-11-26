@@ -8,6 +8,7 @@ import {
 
 import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "../../../contexts/authContext/index";
+import logo from "../../../assets/logo_black2.png";
 
 const Login = () => {
   const { userLoggedIn } = useAuth();
@@ -69,17 +70,24 @@ const Login = () => {
       <section className="section text-white h-screen w-full flex items-center py-10">
         <div className="container mx-auto">
           <div className="flex items-center justify-center md:justify-between w-full">
-
             {/* LEFT SIDE IMAGE */}
             <div className="bg-Image w-[50%] md:h-screen hidden md:block"></div>
 
             {/* RIGHT SIDE */}
             <div className="w-[80%] md:w-[50%] flex items-center justify-center">
-              <div className="w-[450px] flex flex-col gap-12">
+              <div className="w-[450px] flex flex-col gap-5 md:gap-12">
+                {/* Logo */}
+                <div className="flex items-center justify-between">
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    className="w-36 md:w-[300px] items-center"
+                  />
+                </div>
 
                 {/* HEADER */}
                 <div>
-                  <h1 className="text-[40px] leading-tight">
+                  <h1 className="text-[32px] md:text-[40px] leading-tight">
                     Have an account? <br />
                     <span className="textGradient">Log in</span>
                   </h1>
@@ -88,7 +96,6 @@ const Login = () => {
                 {/* FORM */}
                 <form onSubmit={onSubmit}>
                   <div className="flex flex-col gap-7">
-
                     {/* EMAIL */}
                     <input
                       className="py-2 text-[16px] font-bold w-full bg-transparent border-0 
@@ -167,13 +174,10 @@ const Login = () => {
                       />
                       {isSigningIn ? "Signing In..." : "Continue with Google"}
                     </button>
-
                   </div>
                 </form>
-
               </div>
             </div>
-
           </div>
         </div>
       </section>
