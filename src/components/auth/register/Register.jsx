@@ -5,6 +5,7 @@ import {
   doCreateUserWithEmailAndPassword,
   doSendVerificationEmail,
 } from "../../../firebase/auth";
+import logo from "../../../assets/logo_black2.png";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -55,14 +56,20 @@ const Register = () => {
       <section className="section text-white h-screen w-full flex items-center py-10">
         <div className="container mx-auto">
           <div className="flex items-center justify-center md:justify-between w-full">
-
             {/* RIGHT SIDE — FORM */}
             <div className="w-[80%] md:w-[65%] flex items-center justify-center">
               <div className="w-[550px] flex flex-col gap-12">
-
+                {/* Logo */}
+                <div className="flex items-center justify-between">
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    className="w-36 md:w-[300px] items-center"
+                  />
+                </div>
                 {/* HEADER */}
                 <div>
-                  <h1 className="text-[50px] leading-tight">
+                  <h1 className="text-[32px]  md:text-[50px] leading-tight">
                     Create an <span className="textGradient">Account</span>
                   </h1>
                 </div>
@@ -70,7 +77,6 @@ const Register = () => {
                 {/* FORM */}
                 <form onSubmit={onSubmit}>
                   <div className="flex flex-col gap-7">
-
                     {/* EMAIL */}
                     <input
                       className="py-2 text-[16px] font-bold w-full bg-transparent border-0 border-b-2 border-white/50
@@ -148,7 +154,6 @@ const Register = () => {
 
             {/* LEFT SIDE IMAGE */}
             <div className="bg-Image2 w-[35%] md:h-screen hidden md:block"></div>
-
           </div>
         </div>
       </section>
