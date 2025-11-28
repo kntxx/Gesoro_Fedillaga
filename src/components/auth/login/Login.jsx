@@ -93,7 +93,7 @@ const Login = () => {
                 <div>
                   <h1 className="text-[32px] md:text-[40px] leading-tight">
                     Have an account? <br />
-                    <span className="textGradient">Log in</span>
+                    <span className=" bg-red-500">Log in</span>
                   </h1>
                 </div>
 
