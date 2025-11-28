@@ -11,6 +11,10 @@ import { useAuth } from "../../../contexts/authContext/index";
 import logo from "../../../assets/logo_black2.png";
 
 const Login = () => {
+  const add = (x, y) => {
+    return x + y;
+  };
+
   const { userLoggedIn } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
